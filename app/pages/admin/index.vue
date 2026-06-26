@@ -1,14 +1,84 @@
 <script setup lang="ts">
+const username = ref("");
+const password = ref("");
+
+const showLogin = ref(true);
+const loginError = ref("");
+const loading = ref(false);
+
 const {
   data: rsvps,
   pending,
   error,
   refresh,
-} = await useFetch("/api/admin/rsvp");
+} = await useFetch("/api/admin/rsvp", {
+  immediate: false,
+});
+
+async function login() {
+  loginError.value = "";
+  loading.value = true;
+
+  try {
+    await $fetch("/api/admin/login", {
+      method: "POST",
+      body: {
+        username: username.value,
+        password: password.value,
+      },
+    });
+
+    showLogin.value = false;
+
+    // Fetch RSVPs after login
+    await refresh();
+  } catch {
+    loginError.value = "Incorrect username or password.";
+  } finally {
+    loading.value = false;
+  }
+}
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-50">
+  <div
+    v-if="showLogin"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+  >
+    <div class="w-full max-w-md rounded-2xl bg-white p-8 shadow-xl">
+      <h2 class="text-2xl font-bold">Admin Login</h2>
+
+      <div class="mt-6 space-y-4">
+        <input
+          v-model="username"
+          type="text"
+          placeholder="Username"
+          class="w-full rounded-lg border px-4 py-3"
+        />
+
+        <input
+          v-model="password"
+          type="password"
+          placeholder="Password"
+          class="w-full rounded-lg border px-4 py-3"
+          @keyup.enter="login"
+        />
+
+        <p v-if="loginError" class="text-sm text-red-500">
+          {{ loginError }}
+        </p>
+
+        <button
+          @click="login"
+          :disabled="loading"
+          class="w-full rounded-lg bg-black py-3 text-white"
+        >
+          {{ loading ? "Signing in..." : "Login" }}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div v-else class="min-h-screen bg-gray-50">
     <div class="mx-auto max-w-7xl p-8">
       <!-- Header -->
       <div class="mb-8 flex items-center justify-between">
