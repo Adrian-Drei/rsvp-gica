@@ -1,5 +1,10 @@
 <script setup lang="ts">
-const { data: rsvps, pending, refresh } = await useFetch("/api/admin/rsvp");
+const {
+  data: rsvps,
+  pending,
+  error,
+  refresh,
+} = await useFetch("/api/admin/rsvp");
 </script>
 
 <template>
@@ -12,7 +17,23 @@ const { data: rsvps, pending, refresh } = await useFetch("/api/admin/rsvp");
       </button>
     </div>
 
-    <div v-if="pending">Loading...</div>
+    <!-- Show incorrect password error -->
+    <div
+      v-if="error?.statusCode === 401"
+      class="mb-4 rounded bg-red-100 border border-red-300 text-red-700 px-4 py-3"
+    >
+      Incorrect password.
+    </div>
+
+    <!-- Other errors -->
+    <div
+      v-else-if="error"
+      class="mb-4 rounded bg-red-100 border border-red-300 text-red-700 px-4 py-3"
+    >
+      {{ error.statusMessage }}
+    </div>
+
+    <div v-else-if="pending">Loading...</div>
 
     <table v-else class="w-full border-collapse border">
       <thead>
@@ -26,18 +47,9 @@ const { data: rsvps, pending, refresh } = await useFetch("/api/admin/rsvp");
 
       <tbody>
         <tr v-for="guest in rsvps" :key="guest.id">
-          <td class="border p-3">
-            {{ guest.name }}
-          </td>
-
-          <td class="border p-3">
-            {{ guest.attendance }}
-          </td>
-
-          <td class="border p-3">
-            {{ guest.message || "-" }}
-          </td>
-
+          <td class="border p-3">{{ guest.name }}</td>
+          <td class="border p-3">{{ guest.attendance }}</td>
+          <td class="border p-3">{{ guest.message || "-" }}</td>
           <td class="border p-3">
             {{ new Date(guest.created_at).toLocaleString() }}
           </td>
