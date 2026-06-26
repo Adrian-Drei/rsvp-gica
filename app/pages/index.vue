@@ -3,11 +3,8 @@
     <div
       class="bg-[url('/images/paper-texture.png')] max-w-2xl mx-auto font-nashville text-black min-h-screen"
     >
-      
       <!-- HERO -->
-      <section
-        class="relative mx-auto pt-16 pb-20 text-center overflow-hidden"
-      >
+      <section class="relative mx-auto pt-16 pb-20 text-center overflow-hidden">
         <div class="max-w-[309px] mx-auto">
           <h1 class="font-serenity uppercase mb-2.5 text-[56px] leading-none">
             SHE'S TYING
@@ -20,11 +17,7 @@
 
         <!-- Ribbon -->
         <div class="my-5 flex justify-center">
-          <img
-            src="/images/bow-horizontal.png"
-            class="w-full"
-            alt=""
-          />
+          <img src="/images/bow-horizontal.png" class="w-full" alt="" />
         </div>
 
         <div class="space-y-2 max-w-[309px] ml-auto">
@@ -55,114 +48,118 @@
       </section>
 
       <!-- PROGRAM -->
-      <section class="relative max-w-lg mx-auto px-2.5 py-16 overflow-hidden">
-        <!-- <img
-          src="/images/bow-side.png"
-          class="absolute right-0 top-10 w-40"
+      <section class="relative px-2.5 py-16 overflow-hidden">
+        <img
+          src="/images/bow-side.svg"
+          class="absolute rotate-[315deg] -right-[50vw] max-md:opacity-30 md:-right-92.5 top-10"
           alt=""
-        /> -->
+        />
+        <div class="max-w-lg mx-auto">
+          <h2 class="font-serenity uppercase text-[44px] mb-10">
+            PROGRAM FLOW
+          </h2>
 
-        <h2 class="font-serenity uppercase text-[44px] mb-10">PROGRAM FLOW</h2>
-
-        <div
-          class="space-y-8 max-w-[403px] ml-5 font-nashville uppercase leading-relaxed text-[18px]"
-        >
-          <div>
-            <p>6:30 PM – REGISTRATION &amp; WELCOME</p>
-            <p>ARRIVAL OF GUESTS | PHOTO OPPORTUNITIES | REFRESHMENTS</p>
-          </div>
-
-          <div>
-            <p>7:00 PM – OPENING PROGRAM</p>
-            <p>WELCOME REMARKS &amp; INTRODUCTION OF THE BRIDE</p>
-          </div>
-
-          <div>
-            <p>7:10 PM – INTERACTIVE BRIDAL SHOWER ACTIVITIES</p>
-          </div>
-
-          <div>
-            <p>7:45 PM – DINNER &amp; DESSERT BAR</p>
-          </div>
-
-          <div>
-            <p>8:10 PM – TRIBUTES &amp; WELL WISHES</p>
-
-            <div class="mt-5 space-y-1 pl-2">
-              <p>SPECIAL MESSAGES FROM:</p>
-
-              <ul class="list-disc pl-5 space-y-1">
-                <li>TITA LYN (MOTHER OF THE GROOM)</li>
-                <li>MAMA GUENE (NINANG)</li>
-                <li>ATE JA</li>
-                <li>ATE JI</li>
-                <li>ATE TRINS</li>
-                <li>CINDY &amp; PAU</li>
-                <li>ALWINA (SISTER OF THE BRIDE)</li>
-                <li>TITA AKIE (MOTHER OF THE BRIDE)</li>
-              </ul>
+          <div
+            class="space-y-8 max-w-[403px] ml-5 font-nashville uppercase leading-relaxed text-[18px]"
+          >
+            <div>
+              <p>6:30 PM – REGISTRATION &amp; WELCOME</p>
+              <p>ARRIVAL OF GUESTS | PHOTO OPPORTUNITIES | REFRESHMENTS</p>
             </div>
-          </div>
 
-          <div>
-            <p>8:45 PM – A SPECIAL SURPRISE FOR THE BRIDE</p>
-          </div>
+            <div>
+              <p>7:00 PM – OPENING PROGRAM</p>
+              <p>WELCOME REMARKS &amp; INTRODUCTION OF THE BRIDE</p>
+            </div>
 
-          <div>
-            <p>8:50 PM – CLOSING REMARKS FROM THE BRIDE</p>
-          </div>
+            <div>
+              <p>7:10 PM – INTERACTIVE BRIDAL SHOWER ACTIVITIES</p>
+            </div>
 
-          <div>
-            <p>9:00 PM – FELLOWSHIP &amp; PHOTO SESSION</p>
+            <div>
+              <p>7:45 PM – DINNER &amp; DESSERT BAR</p>
+            </div>
+
+            <div>
+              <p>8:10 PM – TRIBUTES &amp; WELL WISHES</p>
+
+              <div class="mt-5 space-y-1 pl-2">
+                <p>SPECIAL MESSAGES FROM:</p>
+
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>TITA LYN (MOTHER OF THE GROOM)</li>
+                  <li>MAMA GUENE (NINANG)</li>
+                  <li>ATE JA</li>
+                  <li>ATE JI</li>
+                  <li>ATE TRINS</li>
+                  <li>CINDY &amp; PAU</li>
+                  <li>ALWINA (SISTER OF THE BRIDE)</li>
+                  <li>TITA AKIE (MOTHER OF THE BRIDE)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <p>8:45 PM – A SPECIAL SURPRISE FOR THE BRIDE</p>
+            </div>
+
+            <div>
+              <p>8:50 PM – CLOSING REMARKS FROM THE BRIDE</p>
+            </div>
+
+            <div>
+              <p>9:00 PM – FELLOWSHIP &amp; PHOTO SESSION</p>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- REMINDERS -->
-      <section
-        class="relative max-w-lg mx-auto px-8 pt-20 pb-24 overflow-hidden"
-      >
-        <!-- <img
-          src="/images/bow-side.png"
-          class="absolute left-0 top-0 w-44"
+      <section class="relative px-8 pt-20 pb-24 overflow-hidden">
+        <img
+          src="/images/bow-side.svg"
+          class="absolute rotate-[33deg] max-md:opacity-30 -left-[62vw] md:-left-101.5 -top-5"
           alt=""
-        /> -->
+        />
+        <div class="max-w-lg mx-auto">
+          <h2 class="font-serenity uppercase text-[42px] text-end mb-12">
+            FRIENDLY REMINDERS
+          </h2>
 
-        <h2 class="font-serenity uppercase text-[42px] text-end mb-12">
-          FRIENDLY REMINDERS
-        </h2>
+          <ul
+            class="space-y-2 ml-auto font-nashville uppercase text-[18px] leading-relaxed list-disc pl-8"
+          >
+            <li>
+              DRESS CODE: BLACK ATTIRE ONLY (PLEASE AVOID WHITE OR IVORY).
+            </li>
 
-        <ul
-          class="space-y-2 ml-auto font-nashville uppercase text-[18px] leading-relaxed list-disc pl-8"
-        >
-          <li>DRESS CODE: BLACK ATTIRE ONLY (PLEASE AVOID WHITE OR IVORY).</li>
+            <li>
+              WE HAVE LIMITED ACCESS TO THE VENUE. KINDLY ARRIVE BEFORE THE
+              PROGRAM STARTS.
+            </li>
 
-          <li>
-            WE HAVE LIMITED ACCESS TO THE VENUE. KINDLY ARRIVE BEFORE THE
-            PROGRAM STARTS.
-          </li>
+            <li>
+              PHOTO READY: EXPECT GAMES, CANDID MOMENTS, AND LOTS OF PICTURES!
+            </li>
 
-          <li>
-            PHOTO READY: EXPECT GAMES, CANDID MOMENTS, AND LOTS OF PICTURES!
-          </li>
+            <li>RSVP: PLEASE CONFIRM BY JULY 3, 2026.</li>
 
-          <li>RSVP: PLEASE CONFIRM BY JULY 3, 2026.</li>
+            <li>
+              GIFTS: YOUR PRESENCE IS THE BEST GIFT, BUT THOUGHTFUL SURPRISES
+              ARE ALWAYS WELCOME.
+            </li>
 
-          <li>
-            GIFTS: YOUR PRESENCE IS THE BEST GIFT, BUT THOUGHTFUL SURPRISES ARE
-            ALWAYS WELCOME.
-          </li>
+            <li>
+              MESSAGE-GIVERS: IF YOU'RE LISTED IN THE PROGRAM, PLEASE PREPARE A
+              2–3 MINUTE MESSAGE FOR THE BRIDE.
+            </li>
 
-          <li>
-            MESSAGE-GIVERS: IF YOU'RE LISTED IN THE PROGRAM, PLEASE PREPARE A
-            2–3 MINUTE MESSAGE FOR THE BRIDE.
-          </li>
-
-          <li>
-            INVITATION ONLY: THIS INVITATION IS NON-TRANSFERABLE TO HELP KEEP
-            THE CELEBRATION INTIMATE.
-          </li>
-        </ul>
+            <li>
+              INVITATION ONLY: THIS INVITATION IS NON-TRANSFERABLE TO HELP KEEP
+              THE CELEBRATION INTIMATE.
+            </li>
+          </ul>
+        </div>
       </section>
     </div>
   </div>
