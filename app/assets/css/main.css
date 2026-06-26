@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Simple Serenity";
+  src: url("/fonts/simpleserenity.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "LA Luxes";
+  src: url("/fonts/la_luxes.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Nashville";
+  src: url("/fonts/nashville.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-serenity: "Simple Serenity", cursive;
+  --font-luxes: "LA Luxes", serif;
+  --font-nashville: "Nashville", serif;
+}
