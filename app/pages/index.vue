@@ -179,6 +179,47 @@ const unlockInvitation = () => {
           </div>
         </section>
 
+        <!-- REMINDERS -->
+        <section class="relative px-8 pt-20 pb-24 overflow-hidden">
+          <img
+            src="/images/bow-side.svg"
+            class="absolute rotate-[33deg] max-md:opacity-30 -left-[62vw] md:-left-101.5 -top-5"
+            alt=""
+          />
+          <div class="max-w-lg mx-auto">
+            <h2 class="font-serenity uppercase text-[42px] text-end mb-12">
+              FRIENDLY REMINDERS
+            </h2>
+            <ul
+              class="space-y-2 ml-auto font-nashville uppercase text-[18px] leading-relaxed list-disc pl-8"
+            >
+              <li>
+                DRESS CODE: BLACK ATTIRE ONLY (PLEASE AVOID WHITE OR IVORY).
+              </li>
+              <li>
+                WE HAVE LIMITED ACCESS TO THE VENUE. KINDLY ARRIVE BEFORE THE
+                PROGRAM STARTS.
+              </li>
+              <li>
+                PHOTO READY: EXPECT GAMES, CANDID MOMENTS, AND LOTS OF PICTURES!
+              </li>
+              <li>RSVP: PLEASE CONFIRM BY JULY 3, 2026.</li>
+              <li>
+                GIFTS: YOUR PRESENCE IS THE BEST GIFT, BUT THOUGHTFUL SURPRISES
+                ARE ALWAYS WELCOME.
+              </li>
+              <li>
+                MESSAGE-GIVERS: IF YOU'RE LISTED IN THE PROGRAM, PLEASE PREPARE
+                A 2–3 MINUTE MESSAGE FOR THE BRIDE.
+              </li>
+              <li>
+                INVITATION ONLY: THIS INVITATION IS NON-TRANSFERABLE TO HELP
+                KEEP THE CELEBRATION INTIMATE.
+              </li>
+            </ul>
+          </div>
+        </section>
+
         <!-- RSVP -->
         <section class="px-8 pb-24">
           <div class="max-w-lg mx-auto">
