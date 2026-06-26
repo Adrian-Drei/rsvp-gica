@@ -37,14 +37,14 @@ const {
         <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200">
           <p class="text-sm text-gray-500">Attending</p>
           <h2 class="mt-2 text-3xl font-bold text-green-600">
-            {{ rsvps.filter((r) => r.attendance === "Attending").length }}
+            {{ rsvps.filter((r) => r.attendance === "Yes").length }}
           </h2>
         </div>
 
         <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200">
           <p class="text-sm text-gray-500">Not Attending</p>
           <h2 class="mt-2 text-3xl font-bold text-red-500">
-            {{ rsvps.filter((r) => r.attendance === "Not Attending").length }}
+            {{ rsvps.filter((r) => r.attendance === "No").length }}
           </h2>
         </div>
       </div>
@@ -123,7 +123,7 @@ const {
                 <span
                   :class="[
                     'inline-flex rounded-full px-3 py-1 text-xs font-semibold',
-                    guest.attendance === 'Attending'
+                    guest.attendance === 'Yes'
                       ? 'bg-green-100 text-green-700'
                       : 'bg-red-100 text-red-700',
                   ]"
