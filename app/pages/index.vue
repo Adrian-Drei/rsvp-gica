@@ -1,3 +1,45 @@
+<script setup lang="ts">
+const loading = ref(false);
+const success = ref(false);
+const error = ref("");
+
+const form = ref({
+  name: "",
+  attendance: "",
+  message: "",
+});
+
+const submitRsvp = async () => {
+  console.log("submitRsvp called", form.value);
+
+  loading.value = true;
+  success.value = false;
+  error.value = "";
+
+  try {
+    const response = await $fetch("/api/rsvp", {
+      method: "POST",
+      body: form.value,
+    });
+
+    console.log(response);
+
+    success.value = true;
+
+    form.value = {
+      name: "",
+      attendance: "",
+      message: "",
+    };
+  } catch (err: any) {
+    console.error(err);
+    error.value =
+      err?.data?.message || err?.statusMessage || "Something went wrong.";
+  } finally {
+    loading.value = false;
+  }
+};
+</script>
 <template>
   <div class="bg-[url('/images/linen.png')]">
     <div
@@ -5,12 +47,16 @@
     >
       <!-- HERO -->
       <section class="relative mx-auto pt-16 pb-20 text-center overflow-hidden">
-        <div class="max-w-[309px] mx-auto">
-          <h1 class="font-serenity uppercase mb-2.5 text-[56px] leading-none">
+        <div class="max-w-[309px] lg:max-w-[430px] mx-auto">
+          <h1
+            class="font-serenity uppercase mb-2.5 text-[56px] leading-none lg:text-[80px]"
+          >
             SHE'S TYING
           </h1>
 
-          <p class="text-end font-luxes text-[68px] leading-none -mt-4 mr-5">
+          <p
+            class="text-end font-luxes text-[68px] leading-none -mt-4 mr-5 lg:text-[100px]"
+          >
             the knot
           </p>
         </div>
@@ -114,51 +160,69 @@
         </div>
       </section>
 
-      <!-- REMINDERS -->
-      <section class="relative px-8 pt-20 pb-24 overflow-hidden">
-        <img
-          src="/images/bow-side.svg"
-          class="absolute rotate-[33deg] max-md:opacity-30 -left-[62vw] md:-left-101.5 -top-5"
-          alt=""
-        />
+      <!-- RSVP -->
+      <section class="px-8 pb-24">
         <div class="max-w-lg mx-auto">
-          <h2 class="font-serenity uppercase text-[42px] text-end mb-12">
-            FRIENDLY REMINDERS
+          <h2 class="font-serenity uppercase text-[42px] mb-10 text-center">
+            RSVP
           </h2>
 
-          <ul
-            class="space-y-2 ml-auto font-nashville uppercase text-[18px] leading-relaxed list-disc pl-8"
-          >
-            <li>
-              DRESS CODE: BLACK ATTIRE ONLY (PLEASE AVOID WHITE OR IVORY).
-            </li>
+          <form @submit.prevent="submitRsvp" class="space-y-5">
+            <div>
+              <label class="block uppercase text-sm mb-2">Full Name</label>
 
-            <li>
-              WE HAVE LIMITED ACCESS TO THE VENUE. KINDLY ARRIVE BEFORE THE
-              PROGRAM STARTS.
-            </li>
+              <input
+                v-model="form.name"
+                type="text"
+                required
+                class="w-full border border-black bg-transparent px-4 py-3 uppercase focus:outline-none"
+              />
+            </div>
 
-            <li>
-              PHOTO READY: EXPECT GAMES, CANDID MOMENTS, AND LOTS OF PICTURES!
-            </li>
+            <div>
+              <label class="block uppercase text-sm mb-2">
+                Will you attend?
+              </label>
 
-            <li>RSVP: PLEASE CONFIRM BY JULY 3, 2026.</li>
+              <select
+                v-model="form.attendance"
+                required
+                class="w-full border border-black bg-transparent px-4 py-3 uppercase focus:outline-none"
+              >
+                <option disabled value="">Select</option>
+                <option value="Yes">Yes, I'll be there</option>
+                <option value="No">Sorry, I can't make it</option>
+              </select>
+            </div>
 
-            <li>
-              GIFTS: YOUR PRESENCE IS THE BEST GIFT, BUT THOUGHTFUL SURPRISES
-              ARE ALWAYS WELCOME.
-            </li>
+            <div>
+              <label class="block uppercase text-sm mb-2">
+                Message (Optional)
+              </label>
 
-            <li>
-              MESSAGE-GIVERS: IF YOU'RE LISTED IN THE PROGRAM, PLEASE PREPARE A
-              2–3 MINUTE MESSAGE FOR THE BRIDE.
-            </li>
+              <textarea
+                v-model="form.message"
+                rows="4"
+                class="w-full border border-black bg-transparent px-4 py-3 resize-none focus:outline-none"
+              />
+            </div>
 
-            <li>
-              INVITATION ONLY: THIS INVITATION IS NON-TRANSFERABLE TO HELP KEEP
-              THE CELEBRATION INTIMATE.
-            </li>
-          </ul>
+            <button
+              type="submit"
+              :disabled="loading"
+              class="w-full bg-black text-white py-3 uppercase tracking-widest hover:opacity-90 disabled:opacity-50"
+            >
+              {{ loading ? "Submitting..." : "Submit RSVP" }}
+            </button>
+
+            <p v-if="success" class="text-center uppercase text-green-700">
+              Thank you! Your RSVP has been received.
+            </p>
+
+            <p v-if="error" class="text-center uppercase text-red-700">
+              {{ error }}
+            </p>
+          </form>
         </div>
       </section>
     </div>
