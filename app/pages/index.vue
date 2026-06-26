@@ -1,170 +1,169 @@
 <template>
-  <div class="bg-[#F8F7F4] font-nashville text-black min-h-screen">
-    <!-- HERO -->
-    <section
-      class="relative max-w-md mx-auto px-8 pt-16 pb-20 text-center overflow-hidden"
+  <div class="bg-[url('/images/linen.png')]">
+    <div
+      class="bg-[url('/images/paper-texture.png')] max-w-2xl mx-auto font-nashville text-black min-h-screen"
     >
-      <h1
-        class="font-serenity uppercase tracking-[0.18em] text-[56px] leading-none"
+      
+      <!-- HERO -->
+      <section
+        class="relative mx-auto pt-16 pb-20 text-center overflow-hidden"
       >
-        SHE'S TYING
-      </h1>
+        <div class="max-w-[309px] mx-auto">
+          <h1 class="font-serenity uppercase mb-2.5 text-[56px] leading-none">
+            SHE'S TYING
+          </h1>
 
-      <div class="font-luxes text-[68px] leading-none -mt-4">the knot</div>
+          <p class="text-end font-luxes text-[68px] leading-none -mt-4 mr-5">
+            the knot
+          </p>
+        </div>
 
-      <!-- Ribbon -->
-      <div class="my-16 flex justify-center">
-        <img
-          src="/images/bow-horizontal.png"
-          class="w-full max-w-[430px]"
+        <!-- Ribbon -->
+        <div class="my-5 flex justify-center">
+          <img
+            src="/images/bow-horizontal.png"
+            class="w-full"
+            alt=""
+          />
+        </div>
+
+        <div class="space-y-2 max-w-[309px] ml-auto">
+          <div>
+            <p class="font-serenity uppercase text-[22px]">JOIN US FOR</p>
+
+            <p class="font-serenity uppercase text-[20px]">
+              ANGELICA'S BRIDAL SHOWER
+            </p>
+          </div>
+
+          <div>
+            <p class="uppercase text-[20px] mt-6">
+              SATURDAY, 25 JULY AT 6:30 PM
+            </p>
+
+            <p class="uppercase text-[18px]">ALPAS BISTRO &amp; CAFE</p>
+          </div>
+
+          <div class="pt-6">
+            <p class="uppercase text-[18px]">DRESS CODE</p>
+
+            <div class="font-luxes text-[56px] leading-none mt-1">
+              Something Black
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROGRAM -->
+      <section class="relative max-w-lg mx-auto px-2.5 py-16 overflow-hidden">
+        <!-- <img
+          src="/images/bow-side.png"
+          class="absolute right-0 top-10 w-40"
           alt=""
-        />
-      </div>
+        /> -->
 
-      <div class="space-y-2">
-        <p class="font-laluxes uppercase tracking-widest text-[22px]">
-          JOIN US FOR
-        </p>
+        <h2 class="font-serenity uppercase text-[44px] mb-10">PROGRAM FLOW</h2>
 
-        <p class="font-laluxes uppercase tracking-wide text-[20px]">
-          ANGELICA'S BRIDAL SHOWER
-        </p>
+        <div
+          class="space-y-8 max-w-[403px] ml-5 font-nashville uppercase leading-relaxed text-[18px]"
+        >
+          <div>
+            <p>6:30 PM – REGISTRATION &amp; WELCOME</p>
+            <p>ARRIVAL OF GUESTS | PHOTO OPPORTUNITIES | REFRESHMENTS</p>
+          </div>
 
-        <p class="font-nashville uppercase text-[20px] tracking-wide mt-6">
-          SATURDAY, 25 JULY AT 6:30 PM
-        </p>
+          <div>
+            <p>7:00 PM – OPENING PROGRAM</p>
+            <p>WELCOME REMARKS &amp; INTRODUCTION OF THE BRIDE</p>
+          </div>
 
-        <p class="font-nashville uppercase text-[18px] tracking-wide">
-          ALPAS BISTRO &amp; CAFE
-        </p>
+          <div>
+            <p>7:10 PM – INTERACTIVE BRIDAL SHOWER ACTIVITIES</p>
+          </div>
 
-        <div class="pt-6">
-          <p class="font-laluxes uppercase text-[18px] tracking-widest">
-            DRESS CODE
-          </p>
+          <div>
+            <p>7:45 PM – DINNER &amp; DESSERT BAR</p>
+          </div>
 
-          <div class="font-serenity text-[56px] leading-none mt-1">
-            Something Black
+          <div>
+            <p>8:10 PM – TRIBUTES &amp; WELL WISHES</p>
+
+            <div class="mt-5 space-y-1 pl-2">
+              <p>SPECIAL MESSAGES FROM:</p>
+
+              <ul class="list-disc pl-5 space-y-1">
+                <li>TITA LYN (MOTHER OF THE GROOM)</li>
+                <li>MAMA GUENE (NINANG)</li>
+                <li>ATE JA</li>
+                <li>ATE JI</li>
+                <li>ATE TRINS</li>
+                <li>CINDY &amp; PAU</li>
+                <li>ALWINA (SISTER OF THE BRIDE)</li>
+                <li>TITA AKIE (MOTHER OF THE BRIDE)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p>8:45 PM – A SPECIAL SURPRISE FOR THE BRIDE</p>
+          </div>
+
+          <div>
+            <p>8:50 PM – CLOSING REMARKS FROM THE BRIDE</p>
+          </div>
+
+          <div>
+            <p>9:00 PM – FELLOWSHIP &amp; PHOTO SESSION</p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- PROGRAM -->
-    <section class="relative max-w-md mx-auto px-8 py-16 overflow-hidden">
-      <img
-        src="/images/bow-side.png"
-        class="absolute right-0 top-10 w-40"
-        alt=""
-      />
-
-      <h2 class="font-laluxes uppercase text-[44px] tracking-widest mb-10">
-        PROGRAM FLOW
-      </h2>
-
-      <div
-        class="space-y-8 font-nashville uppercase leading-relaxed tracking-wide text-[18px]"
+      <!-- REMINDERS -->
+      <section
+        class="relative max-w-lg mx-auto px-8 pt-20 pb-24 overflow-hidden"
       >
-        <div>
-          <p class="font-semibold">6:30 PM – REGISTRATION &amp; WELCOME</p>
-          <p>ARRIVAL OF GUESTS | PHOTO OPPORTUNITIES | REFRESHMENTS</p>
-        </div>
+        <!-- <img
+          src="/images/bow-side.png"
+          class="absolute left-0 top-0 w-44"
+          alt=""
+        /> -->
 
-        <div>
-          <p class="font-semibold">7:00 PM – OPENING PROGRAM</p>
-          <p>WELCOME REMARKS &amp; INTRODUCTION OF THE BRIDE</p>
-        </div>
+        <h2 class="font-serenity uppercase text-[42px] text-end mb-12">
+          FRIENDLY REMINDERS
+        </h2>
 
-        <div>
-          <p class="font-semibold">
-            7:10 PM – INTERACTIVE BRIDAL SHOWER ACTIVITIES
-          </p>
-        </div>
+        <ul
+          class="space-y-2 ml-auto font-nashville uppercase text-[18px] leading-relaxed list-disc pl-8"
+        >
+          <li>DRESS CODE: BLACK ATTIRE ONLY (PLEASE AVOID WHITE OR IVORY).</li>
 
-        <div>
-          <p class="font-semibold">7:45 PM – DINNER &amp; DESSERT BAR</p>
-        </div>
+          <li>
+            WE HAVE LIMITED ACCESS TO THE VENUE. KINDLY ARRIVE BEFORE THE
+            PROGRAM STARTS.
+          </li>
 
-        <div>
-          <p class="font-semibold">8:10 PM – TRIBUTES &amp; WELL WISHES</p>
+          <li>
+            PHOTO READY: EXPECT GAMES, CANDID MOMENTS, AND LOTS OF PICTURES!
+          </li>
 
-          <div class="mt-5 space-y-1 pl-2">
-            <p>SPECIAL MESSAGES FROM:</p>
+          <li>RSVP: PLEASE CONFIRM BY JULY 3, 2026.</li>
 
-            <ul class="list-disc pl-5 space-y-1">
-              <li>TITA LYN (MOTHER OF THE GROOM)</li>
-              <li>MAMA GUENE (NINANG)</li>
-              <li>ATE JA</li>
-              <li>ATE JI</li>
-              <li>ATE TRINS</li>
-              <li>CINDY &amp; PAU</li>
-              <li>ALWINA (SISTER OF THE BRIDE)</li>
-              <li>TITA AKIE (MOTHER OF THE BRIDE)</li>
-            </ul>
-          </div>
-        </div>
+          <li>
+            GIFTS: YOUR PRESENCE IS THE BEST GIFT, BUT THOUGHTFUL SURPRISES ARE
+            ALWAYS WELCOME.
+          </li>
 
-        <div>
-          <p class="font-semibold">
-            8:45 PM – A SPECIAL SURPRISE FOR THE BRIDE
-          </p>
-        </div>
+          <li>
+            MESSAGE-GIVERS: IF YOU'RE LISTED IN THE PROGRAM, PLEASE PREPARE A
+            2–3 MINUTE MESSAGE FOR THE BRIDE.
+          </li>
 
-        <div>
-          <p class="font-semibold">8:50 PM – CLOSING REMARKS FROM THE BRIDE</p>
-        </div>
-
-        <div>
-          <p class="font-semibold">9:00 PM – FELLOWSHIP &amp; PHOTO SESSION</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- REMINDERS -->
-    <section class="relative max-w-md mx-auto px-8 pt-20 pb-24 overflow-hidden">
-      <img
-        src="/images/bow-side.png"
-        class="absolute left-0 top-0 w-44"
-        alt=""
-      />
-
-      <h2
-        class="font-laluxes uppercase text-[42px] tracking-widest text-center mb-12"
-      >
-        FRIENDLY REMINDERS
-      </h2>
-
-      <ul
-        class="space-y-6 font-nashville uppercase text-[18px] leading-relaxed tracking-wide list-disc pl-8"
-      >
-        <li>DRESS CODE: BLACK ATTIRE ONLY (PLEASE AVOID WHITE OR IVORY).</li>
-
-        <li>
-          WE HAVE LIMITED ACCESS TO THE VENUE. KINDLY ARRIVE BEFORE THE PROGRAM
-          STARTS.
-        </li>
-
-        <li>
-          PHOTO READY: EXPECT GAMES, CANDID MOMENTS, AND LOTS OF PICTURES!
-        </li>
-
-        <li>RSVP: PLEASE CONFIRM BY JULY 3, 2026.</li>
-
-        <li>
-          GIFTS: YOUR PRESENCE IS THE BEST GIFT, BUT THOUGHTFUL SURPRISES ARE
-          ALWAYS WELCOME.
-        </li>
-
-        <li>
-          MESSAGE-GIVERS: IF YOU'RE LISTED IN THE PROGRAM, PLEASE PREPARE A 2–3
-          MINUTE MESSAGE FOR THE BRIDE.
-        </li>
-
-        <li>
-          INVITATION ONLY: THIS INVITATION IS NON-TRANSFERABLE TO HELP KEEP THE
-          CELEBRATION INTIMATE.
-        </li>
-      </ul>
-    </section>
+          <li>
+            INVITATION ONLY: THIS INVITATION IS NON-TRANSFERABLE TO HELP KEEP
+            THE CELEBRATION INTIMATE.
+          </li>
+        </ul>
+      </section>
+    </div>
   </div>
 </template>
