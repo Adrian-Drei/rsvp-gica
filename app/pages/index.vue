@@ -43,7 +43,6 @@ const submitRsvp = async () => {
 const unlocked = ref(false);
 const brideAnswer = ref("");
 const answerError = ref(false);
-const bgMusic = ref<HTMLAudioElement | null>(null);
 
 const unlockInvitation = () => {
   if (brideAnswer.value.trim().toLowerCase() === "angelica") {
@@ -54,9 +53,6 @@ const unlockInvitation = () => {
 
       await nextTick();
 
-      bgMusic.value?.play().catch(() => {
-        console.log("Autoplay blocked.");
-      });
     }, 500);
   } else {
     answerError.value = true;
@@ -64,27 +60,8 @@ const unlockInvitation = () => {
 };
 const musicPlaying = ref(true);
 
-const toggleMusic = () => {
-  if (!bgMusic.value) return;
-
-  if (bgMusic.value.paused) {
-    bgMusic.value.play();
-    musicPlaying.value = true;
-  } else {
-    bgMusic.value.pause();
-    musicPlaying.value = false;
-  }
-};
 </script>
 <template>
-  <audio ref="bgMusic" src="/audio/music.mp3" loop preload="auto" />
-  <button
-    v-if="unlocked"
-    @click="toggleMusic"
-    class="fixed bottom-6 right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-full bg-black text-white shadow-xl"
-  >
-    {{ musicPlaying ? "♫" : "♪" }}
-  </button>
   <div v-if="unlocked" class="animate-fade-in relative">
     <div class="bg-[url('/images/linen.png')] min-h-screen">
       <div
