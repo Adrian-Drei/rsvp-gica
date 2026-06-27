@@ -43,21 +43,48 @@ const submitRsvp = async () => {
 const unlocked = ref(false);
 const brideAnswer = ref("");
 const answerError = ref(false);
+const bgMusic = ref<HTMLAudioElement | null>(null);
 
 const unlockInvitation = () => {
   if (brideAnswer.value.trim().toLowerCase() === "angelica") {
     answerError.value = false;
 
-    setTimeout(() => {
+    setTimeout(async () => {
       unlocked.value = true;
+
+      await nextTick();
+
+      bgMusic.value?.play().catch(() => {
+        console.log("Autoplay blocked.");
+      });
     }, 500);
   } else {
     answerError.value = true;
   }
 };
+const musicPlaying = ref(true);
+
+const toggleMusic = () => {
+  if (!bgMusic.value) return;
+
+  if (bgMusic.value.paused) {
+    bgMusic.value.play();
+    musicPlaying.value = true;
+  } else {
+    bgMusic.value.pause();
+    musicPlaying.value = false;
+  }
+};
 </script>
 <template>
+  <audio ref="bgMusic" src="/audio/music.mp3" loop preload="auto" />
   <div v-if="unlocked" class="animate-fade-in">
+    <button
+      @click="toggleMusic"
+      class="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-black text-white shadow-lg transition hover:scale-105"
+    >
+      {{ musicPlaying ? "♫" : "♪" }}
+    </button>
     <div class="bg-[url('/images/linen.png')] min-h-screen">
       <div
         class="bg-[url('/images/paper-texture.png')] max-w-2xl mx-auto font-nashville text-black min-h-screen"
@@ -217,6 +244,41 @@ const unlockInvitation = () => {
                 KEEP THE CELEBRATION INTIMATE.
               </li>
             </ul>
+          </div>
+        </section>
+
+        <!-- LOCATION -->
+        <section class="px-8 pb-20">
+          <div class="max-w-lg mx-auto">
+            <h2 class="font-serenity uppercase text-[42px] mb-4 text-center">
+              Location
+            </h2>
+
+            <p class="text-center uppercase text-[18px] mb-8">
+              Alpas Bistro &amp; Cafe
+            </p>
+
+            <div class="overflow-hidden border border-black">
+              <iframe
+                src="https://www.google.com/maps?q=Alpas+Bistro+%26+Cafe&output=embed"
+                class="w-full h-[350px]"
+                style="border: 0"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+
+            <div class="mt-6 text-center">
+              <a
+                href="https://www.google.com/maps/place/Alpas+Bistro+%26+Cafe/@14.5934506,121.1760825,17z"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block border border-black px-8 py-3 uppercase tracking-[0.2em] transition hover:bg-black hover:text-white"
+              >
+                Open in Google Maps
+              </a>
+            </div>
           </div>
         </section>
 
