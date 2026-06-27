@@ -78,13 +78,14 @@ const toggleMusic = () => {
 </script>
 <template>
   <audio ref="bgMusic" src="/audio/music.mp3" loop preload="auto" />
-  <div v-if="unlocked" class="animate-fade-in">
-    <button
-      @click="toggleMusic"
-      class="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-black text-white shadow-lg transition hover:scale-105"
-    >
-      {{ musicPlaying ? "♫" : "♪" }}
-    </button>
+  <button
+    v-if="unlocked"
+    @click="toggleMusic"
+    class="fixed bottom-6 right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-full bg-black text-white shadow-xl"
+  >
+    {{ musicPlaying ? "♫" : "♪" }}
+  </button>
+  <div v-if="unlocked" class="animate-fade-in relative">
     <div class="bg-[url('/images/linen.png')] min-h-screen">
       <div
         class="bg-[url('/images/paper-texture.png')] max-w-2xl mx-auto font-nashville text-black min-h-screen"
