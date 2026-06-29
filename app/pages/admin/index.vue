@@ -38,6 +38,10 @@ async function login() {
     loading.value = false;
   }
 }
+
+function formatName(name: string) {
+  return name.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+}
 </script>
 
 <template>
@@ -79,9 +83,11 @@ async function login() {
     </div>
   </div>
   <div v-else class="min-h-screen bg-gray-50">
-    <div class="mx-auto max-w-7xl p-8">
+    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       <!-- Header -->
-      <div class="mb-8 flex items-center justify-between">
+      <div
+        class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+      >
         <div>
           <h1 class="text-3xl font-bold text-gray-900">RSVP Dashboard</h1>
           <p class="mt-1 text-gray-500">Manage wedding responses</p>
@@ -96,7 +102,10 @@ async function login() {
       </div>
 
       <!-- Stats -->
-      <div v-if="rsvps" class="mb-8 grid gap-5 md:grid-cols-3">
+      <div
+        v-if="rsvps"
+        class="mb-8 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+      >
         <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200">
           <p class="text-sm text-gray-500">Total RSVPs</p>
           <h2 class="mt-2 text-3xl font-bold">
@@ -145,10 +154,10 @@ async function login() {
         <p class="mt-4 text-gray-500">Loading RSVPs...</p>
       </div>
 
-      <!-- Table -->
+      <!-- Desktop Table -->
       <div
-        v-else
-        class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-200"
+        v-if="!pending"
+        class="hidden overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-200 md:block"
       >
         <table class="min-w-full">
           <thead class="bg-gray-50">
@@ -186,7 +195,7 @@ async function login() {
               class="transition hover:bg-gray-50"
             >
               <td class="px-6 py-5 font-medium text-gray-900">
-                {{ guest.name }}
+                {{ formatName(guest.name) }}
               </td>
 
               <td class="px-6 py-5">
@@ -214,6 +223,63 @@ async function login() {
         </table>
 
         <div v-if="!rsvps?.length" class="p-12 text-center text-gray-500">
+          No RSVPs yet.
+        </div>
+      </div>
+
+      <!-- Mobile Cards -->
+      <div v-if="!pending" class="space-y-4 md:hidden">
+        <div
+          v-for="guest in rsvps"
+          :key="guest.id"
+          class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-200"
+        >
+          <div class="flex items-start justify-between">
+            <h3 class="text-lg font-semibold text-gray-900">
+              {{ formatName(guest.name) }}
+            </h3>
+
+            <span
+              :class="[
+                'rounded-full px-3 py-1 text-xs font-semibold',
+                guest.attendance === 'Yes'
+                  ? 'bg-green-100 text-green-700'
+                  : 'bg-red-100 text-red-700',
+              ]"
+            >
+              {{ guest.attendance }}
+            </span>
+          </div>
+
+          <div class="mt-4 space-y-3">
+            <div>
+              <p
+                class="text-xs font-medium uppercase tracking-wide text-gray-400"
+              >
+                Message
+              </p>
+              <p class="mt-1 text-gray-700">
+                {{ guest.message || "—" }}
+              </p>
+            </div>
+
+            <div>
+              <p
+                class="text-xs font-medium uppercase tracking-wide text-gray-400"
+              >
+                Submitted
+              </p>
+              <p class="mt-1 text-sm text-gray-500">
+                {{ new Date(guest.created_at).toLocaleString() }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          v-if="!rsvps?.length"
+          class="rounded-2xl bg-white p-12 text-center text-gray-500 shadow-sm ring-1 ring-gray-200"
+        >
           No RSVPs yet.
         </div>
       </div>
