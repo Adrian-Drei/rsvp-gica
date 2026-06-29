@@ -52,14 +52,22 @@ const unlockInvitation = () => {
       unlocked.value = true;
 
       await nextTick();
-
     }, 500);
   } else {
     answerError.value = true;
   }
 };
 const musicPlaying = ref(true);
-
+const specialMessage = [
+  "LYN DE BORJA (MOTHER OF THE GROOM)",
+  "GUENE GAPILANGO (NINANG)",
+  "JAJA FERRER",
+  "JIRAH MATIBAG",
+  "KATHRINA DALAGUIT",
+  "CINDY SANTOS & PAU TOLENTINO",
+  "ALWINA ACOSTA (SISTER OF THE BRIDE)",
+  'ANAFE "AKIE" ACOSTA (MOTHER OF THE BRIDE)',
+];
 </script>
 <template>
   <div v-if="unlocked" class="animate-fade-in relative">
@@ -157,14 +165,9 @@ const musicPlaying = ref(true);
                   <p>SPECIAL MESSAGES FROM:</p>
 
                   <ul class="list-disc pl-5 space-y-1">
-                    <li>TITA LYN (MOTHER OF THE GROOM)</li>
-                    <li>MAMA GUENE (NINANG)</li>
-                    <li>ATE JA</li>
-                    <li>ATE JI</li>
-                    <li>ATE TRINS</li>
-                    <li>CINDY &amp; PAU</li>
-                    <li>ALWINA (SISTER OF THE BRIDE)</li>
-                    <li>TITA AKIE (MOTHER OF THE BRIDE)</li>
+                    <li v-for="guest in specialMessage">
+                      {{ guest }}
+                    </li>
                   </ul>
                 </div>
               </div>
